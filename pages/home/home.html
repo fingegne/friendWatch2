@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Gitika Pahwa</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Upcoming Events</h3>
+  
+  <ion-list>
+    <button *ngFor="let event of events" ion-item>
+      {{event.title}}<br>{{event.address}}
+    </button>
+
+    <div item-right>
+      <button default *ngFor="let event of events" ion-button (click)="openModal()">
+        <ion-icon name="calendar"> {{event.date}}</ion-icon> 
+      </button>
+    </div>
+  </ion-list>  
+    
+
+  <ion-item padding>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+
+  <!--  <ion-list>
+        <button ion-item *ngFor="let event of Events" (click)="itemTapped($event, item)">
+          <ion-icon name="{{event.name}}" item-left></ion-icon>
+            {{item.title}}
+          <div class="item-note" item-right>
+            {{item.note}}
+          </div>
+        </button>
+    </ion-list>   -->
+
+
+</ion-content>
